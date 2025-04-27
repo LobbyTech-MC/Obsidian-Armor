@@ -7,21 +7,20 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
 public class Main extends JavaPlugin implements SlimefunAddon {
 // testing
     @Override
     public void onEnable() {
-        ItemStack categoryItem = new CustomItem(Material.OBSIDIAN, "&8黑曜石合金装甲", "", "&a> 单击打开");
+        ItemStack categoryItem = new CustomItemStack(Material.OBSIDIAN, "&8黑曜石合金装甲", "", "&a> 单击打开");
 
         NamespacedKey categoryId = new NamespacedKey(this, "OBSIDIAN_ARMOR");
-        Category category = new Category(categoryId, categoryItem);
+        ItemGroup category = new ItemGroup(categoryId, categoryItem);
         
         
         SlimefunItemStack obs_alloy = new SlimefunItemStack("OBSIDIAN_ALLOY", Material.DIAMOND, "&8黑曜石合金", "&7用于制作黑曜石合金装备");
@@ -38,10 +37,10 @@ public class Main extends JavaPlugin implements SlimefunAddon {
 		SlimefunItem obs_helmet = new SlimefunItem(category, obsHelmet, RecipeType.ENHANCED_CRAFTING_TABLE, recipeForHelmet);
         final ItemStack isHelmet = obsHelmet;
         
-        isHelmet.addUnsafeEnchantment(Enchantment.DURABILITY, 3);
-        isHelmet.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, 6);
-        isHelmet.addUnsafeEnchantment(Enchantment.PROTECTION_EXPLOSIONS, 6);
-        isHelmet.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        isHelmet.addUnsafeEnchantment(Enchantment.UNBREAKING, 3);
+        isHelmet.addUnsafeEnchantment(Enchantment.FIRE_PROTECTION, 6);
+        isHelmet.addUnsafeEnchantment(Enchantment.PROJECTILE_PROTECTION, 6);
+        isHelmet.addUnsafeEnchantment(Enchantment.PROTECTION, 4);
        
         obs_helmet.register(this);
 
@@ -52,10 +51,10 @@ public class Main extends JavaPlugin implements SlimefunAddon {
 		SlimefunItem obs_chestplate = new SlimefunItem(category, obsChestplate, RecipeType.ENHANCED_CRAFTING_TABLE, recipeForChestplate);
         final ItemStack is = obsChestplate;
         
-        is.addEnchantment(Enchantment.DURABILITY, 3);
-        is.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, 6);
-        is.addUnsafeEnchantment(Enchantment.PROTECTION_EXPLOSIONS, 6);
-        is.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        is.addEnchantment(Enchantment.UNBREAKING, 3);
+        is.addUnsafeEnchantment(Enchantment.FIRE_PROTECTION, 6);
+        is.addUnsafeEnchantment(Enchantment.PROJECTILE_PROTECTION, 6);
+        is.addUnsafeEnchantment(Enchantment.PROTECTION, 4);
        
         obs_chestplate.register(this);
         
@@ -68,10 +67,10 @@ public class Main extends JavaPlugin implements SlimefunAddon {
 		SlimefunItem obs_leggings = new SlimefunItem(category, obsLeggings, RecipeType.ENHANCED_CRAFTING_TABLE, recipeForLeggings);
         final ItemStack isLeggings = obsLeggings;
         
-        isLeggings.addEnchantment(Enchantment.DURABILITY, 3);
-        isLeggings.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, 6);
-        isLeggings.addUnsafeEnchantment(Enchantment.PROTECTION_EXPLOSIONS, 6);
-        isLeggings.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        isLeggings.addEnchantment(Enchantment.UNBREAKING, 3);
+        isLeggings.addUnsafeEnchantment(Enchantment.FIRE_PROTECTION, 6);
+        isLeggings.addUnsafeEnchantment(Enchantment.PROJECTILE_PROTECTION, 6);
+        isLeggings.addUnsafeEnchantment(Enchantment.PROTECTION, 4);
        
         obs_leggings.register(this);
         
@@ -83,10 +82,10 @@ public class Main extends JavaPlugin implements SlimefunAddon {
 		SlimefunItem obs_boots = new SlimefunItem(category, obsBoots, RecipeType.ENHANCED_CRAFTING_TABLE, recipeForBoots);
         final ItemStack isBoots = obsBoots;
         
-        isBoots.addEnchantment(Enchantment.DURABILITY, 3);
-        isBoots.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, 6);
-        isBoots.addUnsafeEnchantment(Enchantment.PROTECTION_EXPLOSIONS, 6);
-        isBoots.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        isBoots.addEnchantment(Enchantment.UNBREAKING, 3);
+        isBoots.addUnsafeEnchantment(Enchantment.FIRE_PROTECTION, 6);
+        isBoots.addUnsafeEnchantment(Enchantment.PROJECTILE_PROTECTION, 6);
+        isBoots.addUnsafeEnchantment(Enchantment.PROTECTION, 4);
        
         obs_boots.register(this);
     }
